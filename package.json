@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev:webpack": "webpack-dev-server --mode development",
+    "dev": "netlify dev",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -32,10 +33,13 @@
     "@babel/preset-env": "^7.15.6",
     "@babel/runtime-corejs3": "^7.15.4",
     "autoprefixer": "^10.3.7",
+    "axios": "^0.22.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.3.0",
+    "dotenv": "^10.0.0",
     "eslint-plugin-vue": "^7.18.0",
+    "netlify-cli": "^6.10.1",
     "postcss": "^8.3.9",
     "postcss-loader": "^6.1.1",
     "sass": "^1.42.1",

@@ -32,7 +32,7 @@ export default{
                   parent:parentId
               })
           })
-          dispatch('readWorkspaces')
+          await dispatch('readWorkspaces')
           router.push({
             name: 'Workspace',
             params: {
@@ -44,6 +44,7 @@ export default{
         const workspaces = await _request({
             method:'GET',
         })
+        console.log(workspaces)
         commit('assignState',{
             workspaces
         })
@@ -117,8 +118,17 @@ export default{
   }
 }
 
+
+// async function _request(options) {
+//   console.log('options:',options)
+//   return await fetch('/.netlify/functions/workspace', {
+//     method: 'POST',
+//     body: JSON.stringify(options)
+//   }).then(res => res.json())
+// }
 async function _request(options) {
-  const {id=''} =options
+  console.log('options:',options)
+const {id=''} =options
 
   return await fetch(`https://kdt.roto.codes/documents/${id}`,{
     ...options,
