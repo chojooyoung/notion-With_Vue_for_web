@@ -1,5 +1,6 @@
 import router from '~/routes' 
 
+//const { API_ENDPOINT, API_KEY } = process.env
 export default{
   namespaced:true,
   state(){
@@ -129,12 +130,15 @@ export default{
 async function _request(options) {
   console.log('options:',options)
 const {id=''} =options
-
-  return await fetch(`https://kdt.roto.codes/documents/${id}`,{
+//https://kdt.roto.codes/documents/  
+//${API_ENDPOINT}
+console.log(process.env.API_ENDPOINT)
+console.log(process.env.API_KEY)
+  return await fetch(`${process.env.API_ENDPOINT}${id}`,{
     ...options,
       headers:{
         'Content-Type':'application/json',
-        'x-username': 'jooyoung'
+        'x-username': `${process.env.API_KEY}`
     }
 }).then(res=>res.json())
 }
