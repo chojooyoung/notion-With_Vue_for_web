@@ -2,7 +2,7 @@ const path = require('path')
 const {VueLoaderPlugin} = require('vue-loader')
 const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-//const Dotenv = require('dotenv-webpack')
+const Dotenv = require('dotenv-webpack')
 
 module.exports={
 //    target: 'node',
@@ -65,7 +65,7 @@ module.exports={
                 { from:'static' }
             ]
         }),
-        //new Dotenv()
+        new Dotenv()
     ],
     devServer:{
         port:8079,
