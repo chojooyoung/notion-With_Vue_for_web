@@ -1,4 +1,6 @@
 import router from '~/routes' 
+const APIENDPOINT=process.env.API_ENDPOINT
+const APIKEY=process.env.API_KEY
 
 //const { API_ENDPOINT, API_KEY } = process.env
 export default{
@@ -134,11 +136,11 @@ const {id=''} =options
 //${API_ENDPOINT}
 console.log(process.env.API_ENDPOINT)
 console.log(process.env.API_KEY)
-  return await fetch(`${process.env.API_ENDPOINT}${id}`,{
+  return await fetch(`${APIENDPOINT}${id}`,{
     ...options,
       headers:{
         'Content-Type':'application/json',
-        'x-username': `${process.env.API_KEY}`
+        'x-username': `${APIKEY}`
     }
 }).then(res=>res.json())
 }
