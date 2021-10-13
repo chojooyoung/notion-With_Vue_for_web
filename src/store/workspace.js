@@ -1,6 +1,6 @@
 import router from '~/routes' 
-//const APIENDPOINT=process.env.API_ENDPOINT
-//const APIKEY=process.env.API_KEY
+const APIENDPOINT=process.env.API_ENDPOINT
+const APIKEY=process.env.API_KEY
 
 //const { API_ENDPOINT, API_KEY } = process.env
 export default{
@@ -136,6 +136,8 @@ const {id=''} =options
 //${API_ENDPOINT}
 console.log(process.env.API_ENDPOINT)
 console.log(process.env.API_KEY)
+console.log(APIENDPOINT)
+console.log(APIKEY)
   return await fetch(`https://kdt.roto.codes/documents/${id}`,{
     ...options,
       headers:{
